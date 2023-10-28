@@ -35,7 +35,7 @@ for i in range(1,9): #duyệt qua từ 1-8 (i là số components PCA),
     X_train, X_test, Y_train, Y_test = train_test_split(X_bar, Y, test_size=0.3,shuffle=False)
     #với mỗi i ta xây dựng 1 cây quyết định
     #id3
-    id3 = DecisionTreeClassifier(criterion='entropy')
+    id3 = DecisionTreeClassifier(criterion='entropy', max_depth=14)
     id3.fit(X_train, Y_train) # huấn luyện cây 
     y_pred_id3 = id3.predict(X_test) #Tính kết quả y_test dựa vào x_test dựa vào mô hình vừa huấn luyện
     if(RateRating(y_pred_id3) > max_id3):
