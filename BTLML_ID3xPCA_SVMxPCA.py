@@ -39,7 +39,7 @@ for j in range(1,9):
     X_train, X_test, y_train, y_test = train_test_split(X_bar, Y, test_size=0.3 , shuffle = False)
 
     #id3
-    id3 = DecisionTreeClassifier(criterion='entropy')
+    id3 = DecisionTreeClassifier(criterion='entropy', max_depth=None)
     id3.fit(X_train, y_train)
     y_pred_id3 = id3.predict(X_test)
     rate_id3 = tyledung(y_test,y_pred_id3)
@@ -77,42 +77,42 @@ lable_dudoan = Label(form, text = "Dự đoán bệnh tiểu đường", font=("
 lable_ten = Label(form, text = "Nhập thông tin để dự đoán:", font=("Arial Bold", 10), fg="red")
 lable_ten.grid(row = 1, column = 1, pady = 10, sticky='e')
 
-lable_pre = Label(form, text = " Pregnancies:")
+lable_pre = Label(form, text = " Pregnancies:   ")
 lable_pre.grid(row = 2, column = 1, pady = 10, sticky='e')
 textbox_pre = Entry(form)
 textbox_pre.grid(row = 2, column = 2)
 
-lable_glu = Label(form, text = "Glucose:")
+lable_glu = Label(form, text = "Glucose:   ")
 lable_glu.grid(row = 3, column = 1, pady = 10, sticky='e')
 textbox_glu = Entry(form)
 textbox_glu.grid(row = 3, column = 2)
 
-lable_blood = Label(form, text = "Hương vị:")
+lable_blood = Label(form, text = "BloodPressure:   ")
 lable_blood.grid(row = 4, column = 1,pady = 10, sticky='e')
 textbox_blood = Entry(form)
 textbox_blood.grid(row = 4, column = 2)
 
-lable_skin = Label(form, text = "SkinThickness:")
+lable_skin = Label(form, text = "SkinThickness:   ")
 lable_skin.grid(row = 5, column = 1, pady = 10, sticky='e')
 textbox_skin = Entry(form)
 textbox_skin.grid(row = 5, column = 2)
 
-lable_insu = Label(form, text = "Insulin:")
+lable_insu = Label(form, text = "Insulin:   ")
 lable_insu.grid(row = 6, column = 1, pady = 10 , sticky='e')
 textbox_insu = Entry(form)
 textbox_insu.grid(row = 6, column = 2)
 
-lable_bmi = Label(form, text = "BMI:")
+lable_bmi = Label(form, text = "BMI:   ")
 lable_bmi.grid(row = 7, column = 1, pady = 10,sticky='e' )
 textbox_bmi = Entry(form)
 textbox_bmi.grid(row = 7, column = 2)
 
-lable_Dia = Label(form, text = "DiabetesPedigreeFunction:")
+lable_Dia = Label(form, text = "DiabetesPedigreeFunction:   ")
 lable_Dia.grid(row = 8, column = 1, pady = 10,sticky='e' )
 textbox_Dia = Entry(form)
 textbox_Dia.grid(row = 8, column = 2)
 
-lable_age = Label(form, text = "Age:")
+lable_age = Label(form, text = "Age:   ")
 lable_age.grid(row = 9, column = 1, pady = 10, sticky="e" )
 textbox_age = Entry(form)
 textbox_age.grid(row = 9, column = 2)
