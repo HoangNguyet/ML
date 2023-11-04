@@ -33,9 +33,9 @@ max_id3 = 0     #lưu giá trị tỉ lệ đúng lớn nhất trong các mô h�
 max_svc = 0
 for j in range(1,9):
     pca = PCA(n_components=j)
-    pca.fit(X)
+    pca.fit(scaler_x)
 
-    X_bar = pca.transform(X)
+    X_bar = pca.transform(scaler_x)
     X_train, X_test, y_train, y_test = train_test_split(X_bar, Y, test_size=0.3 , shuffle = False)
 
     #id3
@@ -63,9 +63,9 @@ for j in range(1,9):
         max_svc = rate_svc      #lưu lại tỉ lệ dự đoán đúng của mô hình tốt nhất
         modelmax_svc = svc  #mô hình có tỉ lệ đúng lớn nhất
         y_pred_best_svc = y_pred_svc
-    print ("Số thuộc tính tốt nhất: ", j)
-    print("- Tỉ lệ dự đoán đúng của thuật toán ID3: ",rate_id3 )
-    print("- Tỉ lệ dự đoán đúng của thuật toán SVM: ",rate_svc )
+    # print ("Số thuộc tính tốt nhất: ", j)
+    # print("- Tỉ lệ dự đoán đúng của thuật toán ID3: ",rate_id3 )
+    # print("- Tỉ lệ dự đoán đúng của thuật toán SVM: ",rate_svc )
 
 #form
 form = Tk()             #tạo ra cửa sổ gán vào biến form
