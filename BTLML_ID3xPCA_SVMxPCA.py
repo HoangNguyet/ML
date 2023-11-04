@@ -22,20 +22,14 @@ def tyledung(y_test,y_pred):
 df = pd.read_csv('tieuduong_processed.csv')
 X =  np.array(df[['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']].values)
 Y = np.array(df['Outcome'])
-from sklearn.preprocessing import StandardScaler
-scaler = StandardScaler()
-#Fit dữ liệu vào
-scaler.fit(X)
-#Thực hiện transform scale
-scaler_x = scaler.transform(X)
 
 max_id3 = 0     #lưu giá trị tỉ lệ đúng lớn nhất trong các mô hình khi sd ID3
 max_svc = 0
 for j in range(1,9):
     pca = PCA(n_components=j)
-    pca.fit(scaler_x)
+    pca.fit(X)
 
-    X_bar = pca.transform(scaler_x)
+    X_bar = pca.transform(X)
     X_train, X_test, y_train, y_test = train_test_split(X_bar, Y, test_size=0.3 , shuffle = False)
 
     #id3
